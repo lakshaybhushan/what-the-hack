@@ -1,17 +1,18 @@
-import { NextRequest, NextResponse } from "next/server"
-export async function GET(request: NextRequest) {
+export const runtime = "edge"
+
+export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const hnUrl = searchParams.get("hnUrl")
 
   if (!hnUrl) {
-    return new NextResponse("Please enter a valid URL", { status: 400 })
+    return "Please provide a valid Hacker News URL!"
   }
 
   const res = await fetch(`${process.env.API_URL}?hnURL=${hnUrl}`)
   const reader = res.body?.pipeThrough(new TextDecoderStream()).getReader()
 
   if (!reader) {
-    return new NextResponse("Summary can't be generated!", { status: 404 })
+    return "Failed to read the response!"
   }
 
   const stream = new ReadableStream({
@@ -25,7 +26,5 @@ export async function GET(request: NextRequest) {
     },
   })
 
-  return new NextResponse(stream, {
-    headers: { "Content-Type": "text/plain" },
-  })
+  return new Response(stream)
 }
