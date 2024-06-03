@@ -1,16 +1,20 @@
-export async function GET(request: Request) {
+import { NextRequest, NextResponse } from "next/server"
+
+export const runtime = "edge"
+
+export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const hnUrl = searchParams.get("hnUrl")
 
   if (!hnUrl) {
-    return "Please provide a valid Hacker News URL!"
+    return NextResponse.error()
   }
 
   const res = await fetch(`${process.env.API_URL}?hnURL=${hnUrl}`)
   const reader = res.body?.pipeThrough(new TextDecoderStream()).getReader()
 
   if (!reader) {
-    return "Failed to read the response!"
+    return NextResponse.error()
   }
 
   const stream = new ReadableStream({
@@ -24,5 +28,9 @@ export async function GET(request: Request) {
     },
   })
 
-  return new Response(stream)
+  return new NextResponse(stream, {
+    headers: {
+      "Content-Type": "text/plain",
+    },
+  })
 }
