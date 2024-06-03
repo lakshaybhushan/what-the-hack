@@ -2,8 +2,6 @@
 import { handleURL } from "@/app/actions"
 import { useState } from "react"
 
-export const runtime = "edge"
-
 export default function InputForm() {
   const [summarized, setSummarized] = useState<string>("")
 
@@ -24,7 +22,7 @@ export default function InputForm() {
         <button
           type="submit"
           className="bg-white text-black p-2 rounded-md w-64 mt-8">
-          Summarize
+         Summarize
         </button>
       </form>
 
@@ -36,8 +34,7 @@ export default function InputForm() {
         <>
           <div className="w-full mt-8 p-4 bg-gray-800 text-white rounded-md">
             <p className="text-xl">
-              Hey! It&apos;s great to see you here. Enter a URL from HackerNews
-              to get started. 🚀
+                Hey! It&apos;s great to see you here. Enter a URL from HackerNews to get started. 🚀
             </p>
           </div>
         </>
