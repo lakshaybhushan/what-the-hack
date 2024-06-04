@@ -1,7 +1,3 @@
-import { getRequestContext } from "@cloudflare/next-on-pages"
-
-export const runtime = "edge"
-
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const hnUrl = searchParams.get("hnUrl")
@@ -10,9 +6,7 @@ export async function GET(request: Request) {
     return new Response("Please enter a valid URL", { status: 400 })
   }
 
-  const hackerNewsURL = getRequestContext().env.API_URL
-
-  const res = await fetch(`${hackerNewsURL}?hnURL=${hnUrl}`)
+  const res = await fetch(`${process.env.API_URL}?hnURL=${hnUrl}`)
   const reader = res.body?.pipeThrough(new TextDecoderStream()).getReader()
 
   if (!reader) {

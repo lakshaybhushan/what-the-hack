@@ -48,19 +48,10 @@ export default function InputForm() {
         </button>
       </form>
 
-      {summarized ? (
-        <div className="w-full mt-8 p-4 bg-gray-800 text-white rounded-md">
-          <p className="text-xl">{summarized}</p>
+      {summarized && (
+        <div className="mt-10 p-4 border border-gray-300 rounded-xl w-[60vw]">
+          <p>{summarized}</p>
         </div>
-      ) : (
-        <>
-          <div className="w-full mt-8 p-4 bg-gray-800 text-white rounded-md">
-            <p className="text-xl">
-              Hey! It&apos;s great to see you here. Enter a URL from HackerNews
-              to get started. 🚀
-            </p>
-          </div>
-        </>
       )}
     </div>
   )
