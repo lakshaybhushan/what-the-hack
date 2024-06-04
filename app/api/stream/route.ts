@@ -1,5 +1,5 @@
-export const dynamic = "force-dynamic"
-export const maxDuration = 30;
+export const maxDuration = 45
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const hnUrl = searchParams.get("hnUrl")
@@ -8,7 +8,9 @@ export async function GET(request: Request) {
     return new Response("Please enter a valid URL", { status: 400 })
   }
 
-  const res = await fetch(`${process.env.API_URL}?hnURL=${hnUrl}`)
+  const res = await fetch(`${process.env.API_URL}?hnURL=${hnUrl}`, {
+    cache: "no-store",
+  })
   const reader = res.body?.pipeThrough(new TextDecoderStream()).getReader()
 
   if (!reader) {

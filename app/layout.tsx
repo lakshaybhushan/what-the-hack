@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Figtree } from "next/font/google"
+
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const figtree_font = Figtree({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "HackerNews Comments Summarizer",
@@ -15,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="bg-orange-50">
+      <body className={figtree_font.className}>{children}</body>
     </html>
   )
 }
