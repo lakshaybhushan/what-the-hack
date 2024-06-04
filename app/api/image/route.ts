@@ -1,5 +1,5 @@
-export const maxDuration = 30
-// Image Generation API
+export const dynamic = 'force-dynamic'
+export const maxDuration = 45
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)

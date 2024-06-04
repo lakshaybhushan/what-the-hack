@@ -6,8 +6,8 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col pt-24 pb-0">
-      <section className="px-24">
+    <main className="min-h-screen flex flex-col pt-24 pb-0 items-center justify-center">
+      <section className="flex flex-col items-center justify-center">
         <h1 className="text-5xl font-bold tracking-tighter">
           <span className="text-orange-500">HackerNews</span> Comments
           summarizer
