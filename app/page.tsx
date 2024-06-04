@@ -1,38 +1,14 @@
-"use client"
-
 import React from "react"
-import InputForm from "@/components/form"
-import Link from "next/link"
+import ContentGeneration from "@/components/generation"
+import Footer from "@/components/footer"
+import Heading from "@/components/heading"
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col pt-24 pb-0 items-center justify-center">
-      <section className="flex flex-col items-center justify-center">
-        <h1 className="text-5xl font-bold tracking-tighter">
-          <span className="text-orange-500">HackerNews</span> Comments
-          summarizer
-        </h1>
-        <p className="pt-2 text-xl">
-          Summarize the top comments on HackerNews using Cloudflare Workers AI
-        </p>
-
-        <div>
-          <InputForm />
-        </div>
-      </section>
-
-      <footer className="bottom-0 mt-auto flex w-screen items-center justify-center border-t-2 p-4 text-xs font-light md:w-full md:justify-start md:p-8 md:text-sm">
-        <p>
-          Brought to you by{" "}
-          <Link
-            href="https://lakshb.dev"
-            target="_blank"
-            rel="noopenner noreferrer"
-            className="font-medium underline underline-offset-4 transition duration-150 ease-linear md:hover:text-orange-500">
-            lakshaybhushan
-          </Link>
-        </p>
-      </footer>
+    <main className="min-h-screen flex flex-col items-center justify-center">
+      <Heading />
+      <ContentGeneration />
+      <Footer />
     </main>
   )
 }

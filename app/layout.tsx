@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-orange-50">
+    <html lang="en">
       <body className={figtree_font.className}>{children}</body>
     </html>
   )
