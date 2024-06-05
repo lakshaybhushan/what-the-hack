@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
-import { Figtree } from "next/font/google"
+import { Space_Grotesk } from "next/font/google"
+import { Toaster } from "sonner"
 
 import "./globals.css"
 
-const figtree_font = Figtree({ subsets: ["latin"] })
+const SpaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "HackerNews Comments Summarizer",
@@ -16,8 +17,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={figtree_font.className}>{children}</body>
+    <html lang="en" className="bg-background">
+      <body className={SpaceGrotesk.className}>
+        {children}
+        <Toaster
+        richColors
+        position="top-center"
+        />
+      </body>
     </html>
   )
 }

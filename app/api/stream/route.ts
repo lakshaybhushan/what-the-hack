@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic'
+export const dynamic = "force-dynamic"
 export const maxDuration = 45
 
 export async function GET(request: Request) {
