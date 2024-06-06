@@ -111,7 +111,7 @@ export default function ContentGeneration() {
       <FormInput handleSubmitFn={handleSubmit} />
 
       {(textLoading || imageLoading || summarized || image) && (
-        <div className="w-full md:w-[80vw] lg:w-[60vw] px-4 md:px-8 mx-auto mb-16 mt-8 border-primary/40 border-2 rounded-2xl shadow-lg shadow-primary/30">
+        <div className="w-full md:w-[80vw] lg:w-[60vw] px-4 md:px-8 mx-auto mb-16 mt-8 border-primary/40 border-4 rounded-2xl shadow-lg shadow-primary/30">
           {imageLoading ? (
             <div className="my-10 flex items-center justify-center rounded-xl">
               <Skeleton
@@ -119,6 +119,7 @@ export default function ContentGeneration() {
                 width={256}
                 highlightColor="#FF8325"
                 baseColor="#FFC69C"
+                borderRadius={"20px"}
               />
             </div>
           ) : (

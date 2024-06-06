@@ -4,13 +4,13 @@ import Link from "next/link"
 
 const Heading = () => {
   return (
-    <section className="flex flex-col items-center justify-center pt-12 sm:pt-24 px-4 text-center">
+    <section className="flex flex-col items-center justify-center pt-12 px-4 text-center">
       <Image
         src={hackerNewsLogo}
         alt="Hacker News logo"
-        width={96}
-        height={96}
-        className="rounded-xl shadow-xl shadow-primary/30 mb-6"
+        width={72}
+        height={72}
+        className="rounded-lg shadow-xl shadow-primary/25 mb-4"
       />
       <h1 className="text-4xl sm:text-5xl font-bold text-primary mb-2">
         What the Hack?!
