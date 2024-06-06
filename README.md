@@ -1,68 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`c3`](https://developers.cloudflare.com/pages/get-started/c3).
+<h1 align="center">What the Hack?!</h1>
 
-## Getting Started
+<p align="center">
 
-First, run the development server:
+<img src ="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white">
+<img src ="https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white">
+<img src ="https://img.shields.io/badge/Cloudflare%20Workers-F38020.svg?style=for-the-badge&logo=Cloudflare-Workers&logoColor=white">
+<img src ="https://img.shields.io/badge/Vercel-000000.svg?style=for-the-badge&logo=Vercel&logoColor=white">
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![GithubBanner](./app/opengraph-image.png)
 
-## Cloudflare integration
+Want to stay updated on the latest developer discussions on [HackerNews](https://news.ycombinator.com/)?... Introducing [What the Hack?!](https://wth.lakshb.dev) – a web tool that fetches the top comments from any provided HackerNews post URL. Using Cloudflare workers AI, it delivers a detailed summary of the comments within seconds and generates an illustrative image for the post headline.
 
-Besides the `dev` script mentioned above `c3` has added a few extra scripts that allow you to integrate the application with the [Cloudflare Pages](https://pages.cloudflare.com/) environment, these are:
-  - `pages:build` to build the application for Pages using the [`@cloudflare/next-on-pages`](https://github.com/cloudflare/next-on-pages) CLI
-  - `preview` to locally preview your Pages application using the [Wrangler](https://developers.cloudflare.com/workers/wrangler/) CLI
-  - `deploy` to deploy your Pages application using the [Wrangler](https://developers.cloudflare.com/workers/wrangler/) CLI
+So if you're too lazy to read through the comments, or just want to get a quick overview of the discussion, [What the Hack?!](https://wth.lakshb.dev) is the tool for you!
 
-> __Note:__ while the `dev` script is optimal for local development you should preview your Pages application as well (periodically or before deployments) in order to make sure that it can properly work in the Pages environment (for more details see the [`@cloudflare/next-on-pages` recommended workflow](https://github.com/cloudflare/next-on-pages/blob/05b6256/internal-packages/next-dev/README.md#recommended-workflow))
+> This repository contains the frontend code for the project. The backend code can be found at [What the Hack?! • Backend](https://github.com/lakshaybhushan/wth-backend)
 
-### Bindings
+## Features
 
-Cloudflare [Bindings](https://developers.cloudflare.com/pages/functions/bindings/) are what allows you to interact with resources available in the Cloudflare Platform.
+- **Instant Comment Summary**: Get a detailed summary of the top comments on any HackerNews post URL.
+- **Illustrative Image Generation**: Automatically generate an illustrative image for the post headline.
+- **Text Streaming Response**: Get the summary in real-time as the comments are being processed.
+- **Mobile Responsive**: Enjoy the same experience across all devices.
 
-You can use bindings during development, when previewing locally your application and of course in the deployed application:
+## Built With
 
-- To use bindings in dev mode you need to define them in the `next.config.js` file under `setupDevBindings`, this mode uses the `next-dev` `@cloudflare/next-on-pages` submodule. For more details see its [documentation](https://github.com/cloudflare/next-on-pages/blob/05b6256/internal-packages/next-dev/README.md).
+- Next.js 14
+- Tailwind CSS
+- Hono
+- Cloudflare Workers
+- Vercel
 
-- To use bindings in the preview mode you need to add them to the `pages:preview` script accordingly to the `wrangler pages dev` command. For more details see its [documentation](https://developers.cloudflare.com/workers/wrangler/commands/#dev-1) or the [Pages Bindings documentation](https://developers.cloudflare.com/pages/functions/bindings/).
+## Points to Note
 
-- To use bindings in the deployed application you will need to configure them in the Cloudflare [dashboard](https://dash.cloudflare.com/). For more details see the  [Pages Bindings documentation](https://developers.cloudflare.com/pages/functions/bindings/).
+- This project is a very basic implementation of the Cloudflare Workers AI service. The AI service is still in beta (especially modals that I'm using `Meta's Llama 3`[text generation] & `Dreamshaper`[image generation]) and may not be as accurate as expected. The project is intended to showcase the capabilities of the service and may not be suitable for production use.
 
-#### KV Example
+- If you encounter any issues with the project, please feel free to open an issue or submit a pull request. I would be happy to help you out!.
 
-`c3` has added for you an example showing how you can use a KV binding.
+---
 
-In order to enable the example:
-- Search for javascript/typescript lines containing the following comment:
-  ```ts
-  // KV Example:
-  ```
-  and uncomment the commented lines below it.
-- Do the same in the `wrangler.toml` file, where
-  the comment is:
-  ```
-  # KV Example:
-  ```
-- If you're using TypeScript run the `cf-typegen` script to update the `env.d.ts` file:
-  ```bash
-  npm run cf-typegen
-  # or
-  yarn cf-typegen
-  # or
-  pnpm cf-typegen
-  # or
-  bun cf-typegen
-  ```
-
-After doing this you can run the `dev` or `preview` script and visit the `/api/hello` route to see the example in action.
-
-Finally, if you also want to see the example work in the deployed application make sure to add a `MY_KV_NAMESPACE` binding to your Pages application in its [dashboard kv bindings settings section](https://dash.cloudflare.com/?to=/:account/pages/view/:pages-project/settings/functions#kv_namespace_bindings_section). After having configured it make sure to re-deploy your application.
+This project was possible thanks to an awesome dev [Dhravya Shah](https://github.com/Dhravya) who built the early implementation of this project on his first live stream. You can check out the stream [here](https://www.youtube.com/live/tWCRWo02F-0?si=RMcSFJGB2QVIZ19r). I built upon his work and added a few more features to the project. Thanks, Dhravya! 🚀
