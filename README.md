@@ -34,7 +34,7 @@ So if you're too lazy to read through the comments, or just want to get a quick 
 
 ## Points to Note
 
-- This project is a very basic implementation of the Cloudflare Workers AI service. The AI service is still in beta (especially modals that I'm using `Meta's Llama 3`[text generation] & `Dreamshaper`[image generation]) and may not be as accurate as expected. The project is intended to showcase the capabilities of the service and may not be suitable for production use.
+- This project is a very basic implementation of the Cloudflare Workers AI service. The AI service is still in beta (especially models that I'm using `Meta's Llama 3` [text generation] & `Dreamshaper` [image generation]) and may not be as accurate as expected. The project is intended to showcase the capabilities of the service and may not be suitable for production use.
 
 - If you encounter any issues with the project, please feel free to open an issue or submit a pull request. I would be happy to help you out!.
 

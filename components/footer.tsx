@@ -1,5 +1,5 @@
-import Link from "next/link";
-import React from "react";
+import Link from "next/link"
+import React from "react"
 
 const Footer = () => {
   return (
@@ -10,8 +10,7 @@ const Footer = () => {
           href="https://lakshb.dev"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-medium underline underline-offset-4 transition duration-150 ease-linear md:hover:text-primary/70"
-        >
+          className="font-medium underline underline-offset-4 transition duration-150 ease-linear md:hover:text-primary/70">
           lakshaybhushan
         </Link>
       </p>
@@ -22,8 +21,7 @@ const Footer = () => {
           href="https://nextjs.org/"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-medium underline underline-offset-4 transition duration-150 ease-linear md:hover:text-primary/70"
-        >
+          className="font-medium underline underline-offset-4 transition duration-150 ease-linear md:hover:text-primary/70">
           Nextjs
         </Link>
         ,{" "}
@@ -31,8 +29,7 @@ const Footer = () => {
           href="https://tailwindcss.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-medium underline underline-offset-4 transition duration-150 ease-linear md:hover:text-primary/70"
-        >
+          className="font-medium underline underline-offset-4 transition duration-150 ease-linear md:hover:text-primary/70">
           Tailwind CSS
         </Link>
         , &amp;{" "}
@@ -40,13 +37,12 @@ const Footer = () => {
           href="https://ai.cloudflare.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-medium underline underline-offset-4 transition duration-150 ease-linear md:hover:text-primary/70"
-        >
+          className="font-medium underline underline-offset-4 transition duration-150 ease-linear md:hover:text-primary/70">
           Cloudflare Workers AI
         </Link>
       </p>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
